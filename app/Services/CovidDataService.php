@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Contracts\CovidDataServiceInterface;
+use App\Contracts\Services\CovidDataServiceInterface;
 use App\Models\CovidData;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -45,7 +45,7 @@ class CovidDataService implements CovidDataServiceInterface
             $this->updateCountryData($country);
             $updatedCount++;
         }
-        
+
         return $updatedCount;
     }
 
@@ -72,7 +72,9 @@ class CovidDataService implements CovidDataServiceInterface
             'population' => $country['population'] ?? 0,
             'continent' => $country['continent'] ?? 'Unknown',
             'country_iso2' => $country['countryInfo']['iso2'] ?? 'XX',
-            'country_flag' => $country['countryInfo']['flag'] ?? 'https://disease.sh/assets/img/flags/unknown.png'
+            'country_flag' => $country['countryInfo']['flag'] ?? 'https://disease.sh/assets/img/flags/unknown.png',
+            'latitude' => $country['countryInfo']['lat'],
+            'longitude' => $country['countryInfo']['long'],
         ];
     }
 }

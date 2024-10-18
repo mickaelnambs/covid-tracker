@@ -1,3 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+#sigma-container {
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+
+#custom-popup {
+    display: none;
+    position: absolute;
+    background: white;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    z-index: 1;
+}

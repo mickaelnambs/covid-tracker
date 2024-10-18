@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Contracts\CovidDataServiceInterface;
+use App\Contracts\Services\CovidDataServiceInterface;
 use App\Services\CovidDataService;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;

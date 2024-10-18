@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Contracts\CovidDataServiceInterface;
+use App\Contracts\Services\CovidDataServiceInterface;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 

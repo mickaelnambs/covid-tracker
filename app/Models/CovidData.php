@@ -10,6 +10,11 @@ class CovidData extends Model
         'country', 'cases', 'deaths', 'recovered', 'active',
         'critical', 'cases_per_million', 'deaths_per_million',
         'tests', 'tests_per_million', 'population', 'continent',
-        'country_iso2', 'country_flag'
+        'country_iso2', 'country_flag', 'latitude', 'longitude'
+    ];
+
+    protected $casts = [
+        'latitude' => 'float',
+        'longitude' => 'float',
     ];
 }
