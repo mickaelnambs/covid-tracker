@@ -26,6 +26,7 @@ class CovidDataService implements CovidDataServiceInterface
             }
 
             $countries = $response->json();
+
             return $this->getCountries($countries);
         } catch (\Throwable $e) {
             Log::error('Error fetching COVID data', [
@@ -44,6 +45,7 @@ class CovidDataService implements CovidDataServiceInterface
             $this->updateCountryData($country);
             $updatedCount++;
         }
+        
         return $updatedCount;
     }
 

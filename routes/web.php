@@ -1,7 +1,6 @@
 <?php
 
+use App\Http\Controllers\CovidDataController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [CovidDataController::class, 'index'])->name('covid-data.index');
