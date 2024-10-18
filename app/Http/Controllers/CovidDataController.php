@@ -23,4 +23,11 @@ class CovidDataController extends Controller
 
         return view('covid-data.index', compact('covidData', 'sortColumn', 'sortDirection', 'totalCases', 'totalDeaths', 'totalRecovered'));
     }
+
+    public function show(string $country): View
+    {
+        $countryData = CovidData::where('country', $country)->firstOrFail();
+
+        return view('covid-data.show', compact('countryData'));
+    }
 }

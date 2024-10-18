@@ -40,6 +40,7 @@
                     <th>@sortablelink('deaths', 'Deaths')</th>
                     <th>@sortablelink('recovered', 'Recovered')</th>
                     <th>@sortablelink('active', 'Active Cases')</th>
+                    <th>Details</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,6 +54,9 @@
                         <td>{{ number_format($data->deaths) }}</td>
                         <td>{{ number_format($data->recovered) }}</td>
                         <td>{{ number_format($data->active) }}</td>
+                        <td>
+                            <a href="{{ route('covid-data.show', $data->country) }}" class="btn btn-sm btn-primary">View Details</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
