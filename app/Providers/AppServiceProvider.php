@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Contracts\CovidDataServiceInterface;
+use App\Services\CovidDataService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(CovidDataServiceInterface::class, function ($app) {
+            return new CovidDataService(config('services.covid_api.url'));
+        });
     }
 
     /**
